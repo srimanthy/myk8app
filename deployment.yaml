@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myk8app
+spec:
+  replicas: 1
+  selector:
+    matchLabels: { app: myk8app }
+  template:
+    metadata: { labels: { app: myk8app } }
+    spec:
+      containers:
+      - name: myk8app
+        image: YOUR_DOCKERHUB_USER/myk8app:latest
+        ports: [{ containerPort: 3000 }]
+
