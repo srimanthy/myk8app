@@ -23,14 +23,14 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/myk8app:latest
+        tags: ${{ secrets.srimanthy }}/myk8app:latest
 
     - name: Set up kubectl
       uses: azure/setup-kubectl@v3
 
     - name: Deploy to Kubernetes
       run: |
-        kubectl set image deployment/myk8app myk8app=${{ secrets.DOCKERHUB_USERNAME }}/myk8app:latest --record
+        kubectl set image deployment/myk8app myk8app=${{ secrets.srimanthy }}/myk8app:latest --record
         kubectl rollout status deployment/myk8app
       env:
         KUBECONFIG: ${{ secrets.KUBECONFIG }}
