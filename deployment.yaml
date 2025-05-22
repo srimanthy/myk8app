@@ -11,6 +11,6 @@ spec:
     spec:
       containers:
       - name: myk8app
-        image: YOUR_DOCKERHUB_USER/myk8app:latest
+        image: srimanthy/myk8app:latest
         ports: [{ containerPort: 3000 }]
 
